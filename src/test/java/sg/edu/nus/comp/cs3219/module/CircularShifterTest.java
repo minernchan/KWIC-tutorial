@@ -1,6 +1,7 @@
 package sg.edu.nus.comp.cs3219.module;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -34,6 +35,23 @@ public class CircularShifterTest {
 
 		assertEquals("Day after Tomorrow the", afterShiftLineStorage.get(0).toString());
 		assertEquals("Tomorrow the Day after", afterShiftLineStorage.get(1).toString());
+	}
+
+	@Test
+	public void test1() {
+		inputLineStorage.addLine("The Fast after The Furious");
+		assertEquals(2, afterShiftLineStorage.size());
+
+		assertEquals("Fast after the Furious the", afterShiftLineStorage.get(0).toString());
+		assertEquals("Furious the Fast after the", afterShiftLineStorage.get(1).toString());
+		
+	}
+
+	@Test
+	public void test2() {
+		inputLineStorage.addLine("The After After The");
+		assertEquals(0, afterShiftLineStorage.size());
+
 	}
 
 }
