@@ -1,3 +1,6 @@
+# Making changes
+For Travis-CI
+
 # KWIC Tutorial
 This is a [Maven](https://maven.apache.org/index.html) project. You need to install Maven first before coding.
 
