@@ -37,6 +37,7 @@ public class CircularShifterTest {
 		assertEquals("Tomorrow the Day after", afterShiftLineStorage.get(1).toString());
 	}
 
+	@Test
 	public void test1() {
 		inputLineStorage.addLine("Day Tomorrow Happy Grief");
 		assertEquals(2, afterShiftLineStorage.size());
@@ -50,18 +51,11 @@ public class CircularShifterTest {
 		}
 	}
 
-//	public void test2() {
-//		inputLineStorage.addLine("The After After The");
-//		assertEquals(0, afterShiftLineStorage.size());
-//
-//		for(int i=0; i<afterShiftLineStorage.size(); i++) {
-//			String sent = afterShiftLineStorage.get(1).toString();
-//			String words[] = sent.split(" ");
-//			for(String s : shifter.getIgnoreWords()) {
-//				assertFalse(Arrays.asList(words).contains(s));
-//			}
-//		}
-//
-//	}
+	@Test
+	public void test2() {
+		inputLineStorage.addLine("The After After The");
+		assertEquals(0, afterShiftLineStorage.size());
+
+	}
 
 }
