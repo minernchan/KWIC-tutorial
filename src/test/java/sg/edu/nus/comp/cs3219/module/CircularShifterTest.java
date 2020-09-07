@@ -39,16 +39,12 @@ public class CircularShifterTest {
 
 	@Test
 	public void test1() {
-		inputLineStorage.addLine("Day Tomorrow Happy Grief");
+		inputLineStorage.addLine("The Fast after The Furious");
 		assertEquals(2, afterShiftLineStorage.size());
 
-		for(int i=0; i<afterShiftLineStorage.size(); i++) {
-			String sent = afterShiftLineStorage.get(1).toString();
-			String words[] = sent.split(" ");
-			for(String s : shifter.getIgnoreWords()) {
-				assertFalse(Arrays.asList(words).contains(s));
-			}
-		}
+		assertEquals("Fast after the Furious the", afterShiftLineStorage.get(0).toString());
+		assertEquals("Furious the Fast after the", afterShiftLineStorage.get(1).toString());
+		
 	}
 
 	@Test
